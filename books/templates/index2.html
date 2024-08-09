@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Books</h1>
+    <a href="{% url 'books:formulario' %}">Nuevo libro</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Autor</th>
+                <th>Stock</th>
+                <th>Puntaje</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for book in books%}
+            <tr>
+                <td>{{book.nombre}}</td>
+                <td>{{book.autor}}</td>
+                <td>{{book.stock}}</td>
+                <td>{{book.puntaje}}</td>
+                <td>{{book.categoria}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+{% endblock content %}
